@@ -1,6 +1,7 @@
-* {
-    margin: 0px; 
+*{
+    margin: 0;
 }
+
 .first-container-home{
     display: flex;
     flex-direction: column;
@@ -23,7 +24,7 @@
         height: 100vh;
         justify-content: flex-start;
         align-items:center;
-        background-image:url("./docs/home-page.png"); 
+        background-image:url("./../docs/home-page.png"); 
         background-repeat:no-repeat ;
         background-size: 100% 100%;
     }
