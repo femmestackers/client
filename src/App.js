@@ -1,10 +1,19 @@
-import React from 'react';
+import React from 'react'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
+
+import Home from './components/Home'
+
 
 const App = () => {
   return (
-    <div >
-          Smoothiverse app
-    </div>
+    <BrowserRouter>
+    <Switch>
+    <Route path="/" component={Home} />
+    
+    
+    </Switch>
+    </BrowserRouter>
   )
 }
 
