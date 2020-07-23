@@ -7,16 +7,10 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-
-  }
-  .first-of-container-home{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-
-  }
-
+    //background-image:url("./../docs/home-page.png"); 
+    //background-repeat:no-repeat ;
+    //background-size: 100% 100%;
+}
     .second-container-home {
         display: flex;
         flex-direction: column;
@@ -49,6 +43,7 @@
                         align-items:flex-end;
                     }
                         .navtext{
+                            color: #067D44;
                             font-size: 20px;
                             margin-right: 30px;
                             margin-bottom: 5px;
@@ -69,3 +64,30 @@
                 color:#067D44;
                 background-color: #F3C623;
             }
+.first-container-login{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image:url("./../docs/Login-page.png"); 
+    background-repeat:no-repeat ;
+    background-size: 100% 100%;
+}
+.first-container-signup{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image:url("./../docs/SignUp-page.png"); 
+    background-repeat:no-repeat ;
+    background-size: 100% 100%;
+}
+.first-container-addsmoothie{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image:url("./../docs/SignUp-page.png"); 
+    background-repeat:no-repeat ;
+    background-size: 100% 100%;
+}

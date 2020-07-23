@@ -1,19 +1,19 @@
-import React, {useState} from 'react'
+import React from 'react'
+import './Styles.css'
 
 const Login = () =>{
 return (
-    <form onSubmit={handleSubmit}>
-        <div style={divStyles}>
-            <label style={labelStyles}>Username</label>
-            <input style={inputStyles} required type="text" name="username" placeholder="Enter a username" onChange={handleChange}></input>
-        </div>
-        <div style={divStyles}>
-            <label style={labelStyles}>Password</label>
-            <input style={inputStyles} required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
-        </div>
-        <input type="submit" value="Login"></input>
-        
+    <div className="first-container-login">
+        <form>
+            <div>
+                <label>Email:<input type="text" name="email" /></label>
+            </div><br/>
+            <div>
+                <label>Password:<input type="password" name="password" /></label>
+            </div><br/>
+                <input type="submit" value="LogIn" />
     </form>
-)
+    </div>
+      )
 }
 export default Login
