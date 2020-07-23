@@ -8,7 +8,7 @@ import Login from './components/Login'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import './components/Styles.css'
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 
 const App = () => {
@@ -16,12 +16,12 @@ const App = () => {
     <Router>
     <Nav/>
     <Switch>
-    <Route exact path="/"><Home/></Route>
-    <Route exact path="/signup"><Register/></Route>
-    <Route exact path="/login"><Login/></Route>
-    <Route exact path="/smoothies"><AllSmoothies/></Route>
-    <Route exact path="/newsmoothie"><NewSmoothie/></Route>
-    <Route exact path="/smoothie"><Smoothie/></Route>
+    <Route exact path="/" component={Home}/>
+    <Route exact path="/signup" component={Register}/>
+    <Route exact path="/login" component={Login}/>
+    <Route exact path="/smoothies" component={AllSmoothies}/>
+    <Route exact path="/newsmoothie" component={NewSmoothie}/>
+    <Route exact path="/smoothie" component={Smoothie}/>
     </Switch>
     <Footer/>
     </Router>

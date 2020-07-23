@@ -10,7 +10,11 @@ class AddSmoothie extends React.Component {
   }
   handleChange=(event)=> {    this.setState({value: event.target.value});  }
   handleSubmit=(event)=> {
-    alert('Your Smoothie category is: ' + this.state.value);
+    alert('Your smoothie has been posted');
+    event.preventDefault();
+  }
+  handleUploadPic=(event)=> {
+    alert('Your pic has been uploaded');
     event.preventDefault();
   }
 
@@ -18,7 +22,7 @@ class AddSmoothie extends React.Component {
     return (
   <div className="first-container-addsmoothie">
       <h1>Post your Smoothie!!</h1>    
-      <form onSubmit={this.handleSubmit}>
+      <form >
       <div>
           <label>Smoothie name</label>
           <input type="text" name="smoothie-name" placeholder="Enter a smoothie name"></input>
@@ -53,8 +57,8 @@ class AddSmoothie extends React.Component {
           <input type="text" name="instructions" placeholder="Goodness of this smoothie"></input>
       </div>
       <br/>
-      <input type="submit" value="Upload a pic"></input>
-      <input type="submit" value="Post Smoothie"></input>
+      <input onClick={this.handleUploadPic} type="submit" value="Upload a pic"></input>
+      <input onClick={this.handleSubmit} type="submit" value="Post Smoothie"></input>
  
 </form>
 </div>

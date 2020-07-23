@@ -2,6 +2,7 @@ import React from 'react'
 import './Styles.css'
 
 const Register = () =>{
+    console.log("register");
 return (
   <div className="first-container-signup">
       <form>
