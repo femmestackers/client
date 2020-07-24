@@ -1,7 +1,7 @@
 import React from 'react'
 import './Styles.css'
 
-class AddSmoothie extends React.Component {
+class NewSmoothie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: 'Nut free'};
@@ -66,5 +66,5 @@ class AddSmoothie extends React.Component {
   }
 }
 
-export default AddSmoothie
+export default NewSmoothie
 

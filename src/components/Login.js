@@ -3,14 +3,16 @@ import {useGlobalState} from '../config/store'
 import {loginUser, setLoggedInUser} from '../services/authServices'
 import './Styles.css'
 
-const Login = ({history}) =>{
+
+const Login = ({history}) => {
     const initialFormState = {
-        username: "",
+        email: "",
         password: ""
     } 
     const [userDetails,setUserDetails] = useState(initialFormState)
     const [errorMessage, setErrorMessage] = useState(null)
-    const dispatch = useGlobalState()
+    
+    
 
     function handleChange(event) {
         const name = event.target.name
@@ -20,34 +22,48 @@ const Login = ({history}) =>{
             [name]: value
         })
     }
-
+    /*function validateForm() {
+        return email.length > 5 && password.length > 5;
+      }
+      */
+    
     function handleSubmit(event) {
         event.preventDefault()
         // Attempt login on server
         loginUser(userDetails).then(() => {
-            dispatch({
-                type: "setLoggedInUser",
-                data: userDetails.username
-            })
+            setLoggedInUser(userDetails.username)
+           setErrorMessage(null)
             history.push("/")
-            
-        }).catch((error) => {
-            console.log(`An error occurred authenticating: ${error}`)
+
+        }
+        )
+        .catch((error) => {
+            console.log("error", error)
+            if (error.response && error.response.status === 401)
+                setErrorMessage("Authentication failed. Please check your username and password.")
+            else   
+                setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
         })		
-    }    
-    
+    }
+
+   
+
+
 return (
     <div className="first-container-login">
         <form onSubmit={handleSubmit}>
+            {errorMessage && <p style={{color: "red"}}>{errorMessage}</p>}
             <div>
-                <label>Email:<input type="text" name="email" onChange={handleChange} /></label>
-            </div><br/>
+                <label>Username<input type="text" name="username" onChange={handleChange}/></label>
+            </div>
+            <br/>
             <div>
-                <label>Password:<input type="password" name="password" onChange={handleChange} /></label>
+                <label>Password:<input type="password" name="password" onChange={handleChange}/></label>
             </div><br/>
-                <input type="submit" value="LogIn" />
+                <input type="submit" name="LogIn"/>
     </form>
     </div>
       )
 }
+
 export default Login
