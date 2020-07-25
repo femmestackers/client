@@ -1,6 +1,6 @@
-import './Styles.css'
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
+import './Styles.css'
 
 const Register = ({history}) => {
     const initialFormState = {
