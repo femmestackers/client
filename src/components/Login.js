@@ -32,7 +32,7 @@ const Login = ({history}) => {
         // Attempt login on server
         loginUser(userDetails).then(() => {
             setLoggedInUser(userDetails.username)
-           setErrorMessage(null)
+            setErrorMessage(null)
             history.push("/")
 
         }
@@ -40,7 +40,7 @@ const Login = ({history}) => {
         .catch((error) => {
             console.log("error", error)
             if (error.response && error.response.status === 401)
-                setErrorMessage("Authentication failed. Please check your username and password.")
+                 setErrorMessage("Authentication failed. Please check your username and password.")
             else   
                 setErrorMessage("There may be a problem with the server. Please try again after a few moments.")
         })		
@@ -52,7 +52,7 @@ const Login = ({history}) => {
 return (
     <div className="first-container-login">
         <form onSubmit={handleSubmit}>
-            {errorMessage && <p style={{color: "red"}}>{errorMessage}</p>}
+            {errorMessage && <p data-cy="errorMessage" style={{color: "red"}}>{errorMessage}</p>}
             <div>
                 <label>Username<input data-cy="username" type="text" name="username" onChange={handleChange}/></label>
             </div>
