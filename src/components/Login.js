@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useGlobalState} from '../config/store'
+//import {useGlobalState} from '../config/store'
 import {loginUser, setLoggedInUser} from '../services/authServices'
 import './Styles.css'
 
@@ -54,13 +54,13 @@ return (
         <form onSubmit={handleSubmit}>
             {errorMessage && <p style={{color: "red"}}>{errorMessage}</p>}
             <div>
-                <label>Username<input type="text" name="username" onChange={handleChange}/></label>
+                <label>Username<input data-cy="username" type="text" name="username" onChange={handleChange}/></label>
             </div>
             <br/>
             <div>
-                <label>Password:<input type="password" name="password" onChange={handleChange}/></label>
+                <label>Password:<input data-cy="password" type="password" name="password" onChange={handleChange}/></label>
             </div><br/>
-                <input type="submit" name="LogIn"/>
+                <input data-cy="loginButton" type="submit" name="LogIn"/>
     </form>
     </div>
       )
