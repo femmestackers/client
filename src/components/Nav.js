@@ -6,7 +6,7 @@ import './Styles.css'
 
 const Nav = () =>{
     return (
-        <div>
+        
         <div className="navbar">
                 <div className="navelement1">
                     <p className="navtitle">SMOOTHIVERSE</p>
@@ -20,7 +20,7 @@ const Nav = () =>{
                     <Link data-cy="logout" className="navtext" to="/" >Logout</Link>
                 </div>
         </div>
-        </div>
+        
 
         
           )

@@ -1,4 +1,5 @@
 import React from 'react'
+import Ingredients from './Ingredients'
 import './Styles.css'
 
 class Smoothie extends React.Component {
@@ -15,24 +16,26 @@ class Smoothie extends React.Component {
   }
 
   render() {
+    const {name,category, ingredients,instructions,fyi,comments}=this.props.smoothie
     return (
   <div className="first-container-addsmoothie">
       <h1>Enjoy!!</h1>    
       <form onSubmit={this.handleSubmit}>
       <div>
-          <label>Smoothie name:{}</label>
+          <label>Smoothie name:{name}</label>
       </div>
       <br/>
       <div>
-          <label>Smoothie category:{}</label>
+          <label>Smoothie category:{category}</label>
       </div>
       <br/>
       <div>
-          <label>Ingredients:{}</label>
+          <label>Ingredients:</label>
+          <Ingredients ingredients={ingredients} />
       </div>
       <br/>
       <div>
-          <label>Instructions:{}</label>
+          <label>Instructions:{instructions}</label>
       </div>
       <br/>
       <input type="submit" value="Edit Smoothie"></input>
