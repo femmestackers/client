@@ -17,19 +17,28 @@ class NewSmoothie extends React.Component {
     alert('Your pic has been uploaded');
     event.preventDefault();
   }
+  
 
   render() {
+    const labelStyles = {
+      color: 'green',
+      fontSize: '1.2em',
+  }
+  const titleStyles = {
+    color: 'green',
+    fontSize: '2.2em',
+}
     return (
   <div className="first-container-addsmoothie">
-      <h1>Post your Smoothie!!</h1>    
+    <div className="formbox">
+      <h1 style={titleStyles}>Post your Smoothie!!</h1>    
       <form >
       <div>
-          <label>Smoothie name</label>
+          <label style={labelStyles}>Smoothie name</label>
           <input type="text" name="smoothie-name" placeholder="Enter a smoothie name"></input>
       </div>
-      <br/>
       <div>
-          <label>
+          <label style={labelStyles}>
           Select a smoothie category:
           <select value={this.state.value} onChange={this.handleChange}>            
             <option value="Pregnancy and post natal">Pregnancy and post natal</option>
@@ -41,26 +50,21 @@ class NewSmoothie extends React.Component {
           </select>
           </label>
       </div>
-      <br/>
       <div>
-          <label>Ingredients</label>
+          <label style={labelStyles}>Ingredients</label>
           <input type="text" name="ingredients" placeholder="Enter ingredients"></input>
       </div>
-      <br/>
       <div>
-          <label>Instructions</label>
+          <label style={labelStyles}>Instructions</label>
           <input type="text" name="instructions" placeholder="Enter the instructions"></input>
       </div>
-      <br/>
       <div>
-          <label>Why this smoothie?</label>
+          <label style={labelStyles}>Why this smoothie?</label>
           <input type="text" name="instructions" placeholder="Goodness of this smoothie"></input>
       </div>
-      <br/>
-      <input onClick={this.handleUploadPic} type="submit" value="Upload a pic"></input>
       <input onClick={this.handleSubmit} type="submit" value="Post Smoothie"></input>
- 
 </form>
+</div>
 </div>
     );
   }

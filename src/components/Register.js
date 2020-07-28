@@ -28,32 +28,41 @@ const Register = ({history}) => {
         })
         history.push("/")
     }
+    const labelStyles = {
+        color: 'green',
+        fontSize: '1.2em',
+    }
+    const titleStyles = {
+        color: 'green',
+        fontSize: '2.2em',
+    }
 
 return (
   <div className="first-container-signup">
+      <div className="formbox"> 
       <form onSubmit={handleSubmit}>
           <div>
-              <label>Username</label>
+              <label style={titleStyles}>Signup</label>
+           </div>
+          <div>
+              <label style={labelStyles}>Username</label>
               <input type="text" name="username" placeholder="Enter a username"  onChange={handleChange}></input>
           </div>
-          <br/>
           <div>
-              <label>Email</label>
+              <label style={labelStyles}>Email</label>
               <input type="text" name="email" placeholder="Enter an email"  onChange={handleChange}></input>
           </div>
-          <br/>
           <div>
-              <label>Password</label>
+              <label style={labelStyles}>Password</label>
               <input type="password" name="password" placeholder="Enter a password"  onChange={handleChange}></input>
           </div>
-          <br/>
           <div>
-              <label>Confirm Password</label>
+              <label style={labelStyles}>Confirm Password</label>
               <input type="password" name="confirm-password" placeholder="Confirm the password"  onChange={handleChange}></input>
           </div>
-          <br/>
           <input type="submit" value="SignUp"></input>
       </form>
+      </div>
   </div>
 )
 }

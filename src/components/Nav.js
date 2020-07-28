@@ -13,11 +13,11 @@ const Nav = () =>{
                 </div>
                 <div className="navelement2">
                     <Link className="navtext" to="/" >Home</Link>
-                    <Link className="navtext" to="/signup" >SignUp</Link>
-                    <Link className="navtext" to="/login" >LogIn</Link>
+                    <Link className="navtext" to="/auth/register" >SignUp</Link>
+                    <Link data-cy="login" className="navtext" to="/auth/login" >Login</Link>
                     <Link className="navtext" to="/smoothies" >ViewAll</Link>
                     <Link className="navtext" to="/newsmoothie" >AddSmoothie</Link>
-                    <Link className="navtext" to="/" >LogOut</Link>
+                    <Link data-cy="logout" className="navtext" to="/" >Logout</Link>
                 </div>
         </div>
         </div>

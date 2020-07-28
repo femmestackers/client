@@ -1,47 +1,37 @@
 import React from 'react'
 import './Styles.css'
 
-class Smoothie extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: 'Nut free'};
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleChange=(event)=> {    this.setState({value: event.target.value});  }
-  handleSubmit=(event)=> {
-    alert('Your Smoothie category is: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
+const Smoothie = (smoothie) =>{
+  const {name, category, ingredients, instructions, fyi} = smoothie
     return (
-  <div className="first-container-addsmoothie">
-      <h1>Enjoy!!</h1>    
-      <form onSubmit={this.handleSubmit}>
-      <div>
-          <label>Smoothie name:{}</label>
-      </div>
-      <br/>
-      <div>
-          <label>Smoothie category:{}</label>
-      </div>
-      <br/>
-      <div>
-          <label>Ingredients:{}</label>
-      </div>
-      <br/>
-      <div>
-          <label>Instructions:{}</label>
-      </div>
-      <br/>
-      <input type="submit" value="Edit Smoothie"></input>
-      <input type="submit" value="Delete Smoothie"></input>
-      <input type="submit" value="Edit Pic"></input>
-</form>
-</div>
+       <div className="smoothieBox">
+          <div className="smoothieBoxContent">  
+              <div>
+                  <label>Smoothie name:{name}</label>
+              </div>
+              <br/>
+              <div>
+                  <label>Smoothie category:{category}</label>
+              </div>
+              <br/>
+              <div>
+                  <label>Ingredients:{ingredients}</label>
+              </div>
+              <br/>
+              <div>
+                  <label>Instructions:{instructions}</label>
+              </div>
+              <br/>
+              <div>
+                  <label>Fyi:{fyi}</label>
+              </div>
+              <div className="buttonStyles">
+              <input type="submit" value="Edit Smoothie"/><br/>
+              <input type="submit" value="Delete Smoothie"/>
+              </div>
+          </div>
+        </div>
     );
-  }
 }
 
 export default Smoothie
