@@ -12,7 +12,6 @@ const Login = ({history}) => {
     const [userDetails,setUserDetails] = useState(initialFormState)
     const [errorMessage, setErrorMessage] = useState(null)
     
-    
 
     function handleChange(event) {
         const name = event.target.name
@@ -60,7 +59,7 @@ return (
             <div>
                 <label>Password:<input data-cy="password" type="password" name="password" onChange={handleChange}/></label>
             </div><br/>
-                <input data-cy="loginButton" type="submit" name="LogIn"/>
+                <input data-cy="loginButton" type="submit" name="LogIn"/> 
     </form>
     </div>
       )
