@@ -1,37 +1,68 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Styles.css'
+import {useGlobalState} from '../config/store'
+import {addSmoothie} from '../services/smoothieServices'
 
-class NewSmoothie extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: 'Nut free'};
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleChange=(event)=> {    this.setState({value: event.target.value});  }
-  handleSubmit=(event)=> {
-    alert('Your smoothie has been posted');
-    event.preventDefault();
-  }
-  handleUploadPic=(event)=> {
-    alert('Your pic has been uploaded');
-    event.preventDefault();
+
+
+const NewSmoothie = ({history}) => {
+
+  function handleChange(event) {
+    const name = event.target.name
+    const value = event.target.value
+    setFormState({
+      ...formState,
+      [name]: value
+    })
   }
 
-  render() {
+
+  function handleSubmit (event) {
+    event.preventDefault()
+    const newSmoothie = {
+        name: formState.name,
+        category: formState.category,
+        ingredients: formState.ingredients,
+        instructions: formState.instructions,
+        fyi: formState.fyi
+    }
+    addSmoothie(newSmoothie).then((newSmoothie) => {
+        dispatch({
+            type: "setSmoothies",
+            data: [newSmoothie,...smoothies]
+        })
+        history.push('/')
+    }).catch ((error) => {
+        console.log("Caught an error on server adding a smoothie", error)
+    })
+
+}
+
+const initialFormState = {
+  name: "",
+  category: "",
+  ingredients: "",
+  instructions: "",
+  fyi: ""
+}
+const[formState, setFormState] = useState(initialFormState)
+const {store, dispatch} = useGlobalState()
+const {smoothies} = store
+
+
     return (
   <div className="first-container-addsmoothie">
-      <h1>Post your Smoothie!!</h1>    
+      <h1>Post your Smoothie here!!</h1>    
       <form >
       <div>
           <label>Smoothie name</label>
-          <input type="text" name="smoothie-name" placeholder="Enter a smoothie name"></input>
+          <input type="text" name="smoothie-name" placeholder="Enter a smoothie name" value={formState.name} onChange = {handleChange}/>
       </div>
       <br/>
       <div>
           <label>
           Select a smoothie category:
-          <select value={this.state.value} onChange={this.handleChange}>            
+          <select value={formState.category} onChange={handleChange}>            
             <option value="Pregnancy and post natal">Pregnancy and post natal</option>
             <option value="Nut free">Nut free</option>
             <option value="Diabetic-friendly">Diabetic-friendly</option>
@@ -44,27 +75,27 @@ class NewSmoothie extends React.Component {
       <br/>
       <div>
           <label>Ingredients</label>
-          <input type="text" name="ingredients" placeholder="Enter ingredients"></input>
+          <input type="text" name="ingredients" placeholder="Enter ingredients" value={formState.ingredients} onChange={handleChange}/>
       </div>
       <br/>
       <div>
           <label>Instructions</label>
-          <input type="text" name="instructions" placeholder="Enter the instructions"></input>
+          <input type="text" name="instructions" placeholder="Enter the instructions" value={formState.instructions} onChange={handleChange}/>
       </div>
       <br/>
       <div>
-          <label>Why this smoothie?</label>
-          <input type="text" name="instructions" placeholder="Goodness of this smoothie"></input>
+          <label>FYI(Any replacements, nutritional info?)</label>
+          <input type="text" name="instructions" placeholder="Goodness of this smoothie" value={formState.fyi} onChange={handleChange}/>
       </div>
       <br/>
-      <input onClick={this.handleUploadPic} type="submit" value="Upload a pic"></input>
-      <input onClick={this.handleSubmit} type="submit" value="Post Smoothie"></input>
+      
+      <input onSubmit={handleSubmit} type="submit" value="Post Smoothie"/>
  
 </form>
 </div>
-    );
+    )
   }
-}
+
 
 export default NewSmoothie
 
