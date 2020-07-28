@@ -1,48 +1,79 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import Ingredients from './Ingredients'
 import './Styles.css'
+import {useGlobalState} from '../config/store'
+import {deleteSmoothie} from '../services/smoothieServices'
 
-class Smoothie extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: 'Nut free'};
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleChange=(event)=> {    this.setState({value: event.target.value});  }
-  handleSubmit=(event)=> {
-    alert('Your Smoothie category is: ' + this.state.value);
-    event.preventDefault();
-  }
 
-  render() {
+ const Smoothie = ({history, smoothie}) => {
+
+  const {store, dispatch} = useGlobalState()
+  const {smoothies, loggedInUser} = store
+  // where no expenses exist, return null
+  if (!smoothie) return null
+
+  const {name,category, ingredients,instructions,fyi}= smoothie
+  function handleEdit(event) {
+    event.preventDefault()
+    history.push(`/smoothies/edit/${smoothie._id}`)
+  }
+  
+
+  //Handle delete button
+  function handleDelete(event) {
+    event.preventDefault()
+     deleteSmoothie(smoothie._id).then(() => {
+        console.log("deleted smoothie")
+        const updatedSmoothies = smoothies.filter((smoothie) => smoothie._id !== smoothie._id)
+        dispatch ({
+            type: "setSmoothies",
+            data: updatedSmoothies
+        })
+        history.push("/")
+    }).catch((error) => {
+        console.log("There was an error deleting smoothie", error)
+    })
+}
+
+    
     return (
-  <div className="first-container-addsmoothie">
-      <h1>Enjoy!!</h1>    
-      <form onSubmit={this.handleSubmit}>
+      
+  <div>
+      <form>
       <div>
-          <label>Smoothie name:{}</label>
+       <Link to={`/smoothies/${smoothie._id}`}>
+
+          <label>Smoothie name:{name}</label>
+          </Link>
       </div>
       <br/>
       <div>
-          <label>Smoothie category:{}</label>
+          <label>Smoothie category:{category}</label>
       </div>
       <br/>
       <div>
-          <label>Ingredients:{}</label>
+          <label>Ingredients:</label>
+          <Ingredients ingredients= {ingredients} />
       </div>
       <br/>
       <div>
-          <label>Instructions:{}</label>
+          <label>Instructions:{instructions}</label>
       </div>
       <br/>
-      <input type="submit" value="Edit Smoothie"></input>
-      <input type="submit" value="Delete Smoothie"></input>
-      <input type="submit" value="Edit Pic"></input>
+      <div>
+          <label>Fyi:{fyi}</label>
+      </div>
+      <br/>
+      
+      
+      <input type="submit" value="Edit Smoothie" onClick={handleEdit}/>
+      <input type="submit" value="Delete Smoothie" onClick={handleDelete}/><br/>
 </form>
+
 </div>
     );
   }
-}
+
 
 export default Smoothie
-

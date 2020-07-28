@@ -1,17 +1,18 @@
 import React, {useState} from 'react'
-//import {useGlobalState} from '../config/store'
+import {useGlobalState} from '../config/store'
 import {loginUser, setLoggedInUser} from '../services/authServices'
 import './Styles.css'
 
 
 const Login = ({history}) => {
     const initialFormState = {
-        email: "",
+        username: "",
         password: ""
     } 
     const [userDetails,setUserDetails] = useState(initialFormState)
     const [errorMessage, setErrorMessage] = useState(null)
-    
+    const {dispatch} = useGlobalState()
+
 
     function handleChange(event) {
         const name = event.target.name
@@ -29,9 +30,13 @@ const Login = ({history}) => {
     function handleSubmit(event) {
         event.preventDefault()
         // Attempt login on server
-        loginUser(userDetails).then(() => {
+        loginUser(userDetails).then((response) => {
+            dispatch({
+                type: "setLoggedInUser",
+                data: userDetails.username
+            })
             setLoggedInUser(userDetails.username)
-            setErrorMessage(null)
+            //setErrorMessage(null)
             history.push("/")
 
         }
@@ -50,16 +55,15 @@ const Login = ({history}) => {
 
 return (
     <div className="first-container-login">
-        <form onSubmit={handleSubmit}>
+        <form>
             {errorMessage && <p data-cy="errorMessage" style={{color: "red"}}>{errorMessage}</p>}
             <div>
                 <label>Username<input data-cy="username" type="text" name="username" onChange={handleChange}/></label>
             </div>
-            <br/>
             <div>
                 <label>Password:<input data-cy="password" type="password" name="password" onChange={handleChange}/></label>
             </div><br/>
-                <input data-cy="loginButton" type="submit" name="LogIn"/> 
+                <input data-cy="loginButton" type="submit" name="Login" onSubmit={handleSubmit}/> 
     </form>
     </div>
       )
