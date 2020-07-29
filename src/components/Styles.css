@@ -114,13 +114,13 @@ input[type=text] {
 
   /* AllSmoothie page and Single Smoothie page */
   .allSmoothie-background{
-    background-image:url("./../docs/viewAll.png"); 
+    background-image:url("./../docs/singleSmoothie.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
 
 }
 .singleSmoothi-background{
-    background-image:url("./../docs/viewAll.png"); 
+    background-image:url("./../docs/singleSmoothie.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
     width: 100vw;
@@ -128,7 +128,7 @@ input[type=text] {
 } 
   
   .smoothieBox{
-    background-image:url("./../docs/home-page.png"); 
+    background-image:url("./../docs/viewAll.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
     margin-left: 50px;
@@ -141,7 +141,7 @@ input[type=text] {
  }
  .smoothieBoxContent{
     font-family: "Merriweather", serif;
-    font-size: 1.4vw;
+    font-size: 1 vw;
     font-weight: bold;
     margin: 10px;
     color:green
