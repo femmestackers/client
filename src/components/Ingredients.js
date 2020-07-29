@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Ingredients=({ingredients}) => {
+    if (!ingredients) {
+        return null
+    }
     return(
         <div>
             {Object.keys(ingredients).map((ingredient)=>{

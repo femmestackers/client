@@ -35,8 +35,8 @@ const Nav = () =>{
                 ? (
                 <div data-cy="loginNav" className="navelement2">
                     <Link className="navtext" to="/" >Home</Link>
-                    <Link className="navtext" to="/smoothies" >ViewAll</Link>
-                    <Link className="navtext" to="/newsmoothie" >AddSmoothie</Link>
+                    <Link className="navtext" to="/smoothies" >View All Smoothies</Link>
+                    <Link className="navtext" to="/smoothies/new" >Add Smoothie</Link>
                     <Link data-cy="logout" className="navtext" to="/" onClick={handleLogout}>Logout</Link>
                 </div>)
                  : (<div data-cy="logoutNav">

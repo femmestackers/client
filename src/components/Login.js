@@ -63,7 +63,7 @@ return (
             <div>
                 <label>Password:<input data-cy="password" type="password" name="password" onChange={handleChange}/></label>
             </div><br/>
-                <input data-cy="loginButton" type="submit" name="Login" onSubmit={handleSubmit}/> 
+                <input data-cy="loginButton" type="submit" name="Login" onClick={handleSubmit}/> 
     </form>
     </div>
       )

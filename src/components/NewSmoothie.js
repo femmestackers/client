@@ -31,7 +31,7 @@ const NewSmoothie = ({history}) => {
             type: "setSmoothies",
             data: [newSmoothie,...smoothies]
         })
-        history.push('/')
+        history.push('/smoothies')
     }).catch ((error) => {
         console.log("Caught an error on server adding a smoothie", error)
     })
@@ -40,7 +40,7 @@ const NewSmoothie = ({history}) => {
 
 const initialFormState = {
   name: "",
-  category: "",
+  category: "Pregnancy and post natal",
   ingredients: "",
   instructions: "",
   fyi: ""
@@ -56,13 +56,13 @@ const {smoothies} = store
       <form >
       <div>
           <label>Smoothie name</label>
-          <input type="text" name="smoothie-name" placeholder="Enter a smoothie name" value={formState.name} onChange = {handleChange}/>
+          <input type="text" name="name" placeholder="Enter a smoothie name" value={formState.name} onChange = {handleChange}/>
       </div>
       <br/>
       <div>
           <label>
           Select a smoothie category:
-          <select value={formState.category} onChange={handleChange}>            
+          <select name="category" value={formState.category} onChange={handleChange}>            
             <option value="Pregnancy and post natal">Pregnancy and post natal</option>
             <option value="Nut free">Nut free</option>
             <option value="Diabetic-friendly">Diabetic-friendly</option>
@@ -85,11 +85,11 @@ const {smoothies} = store
       <br/>
       <div>
           <label>FYI(Any replacements, nutritional info?)</label>
-          <input type="text" name="instructions" placeholder="Goodness of this smoothie" value={formState.fyi} onChange={handleChange}/>
+          <input type="text" name="fyi" placeholder="Goodness of this smoothie" value={formState.fyi} onChange={handleChange}/>
       </div>
       <br/>
       
-      <input onSubmit={handleSubmit} type="submit" value="Post Smoothie"/>
+      <input onClick={handleSubmit} type="submit" value="Post Smoothie"/>
  
 </form>
 </div>
