@@ -56,7 +56,7 @@ const {smoothies} = store
   const titleStyles = {
     color: 'green',
     fontSize: '2.2em',
-}
+  }
     return (
   <div className="first-container-addsmoothie">
     <div className="formbox">
