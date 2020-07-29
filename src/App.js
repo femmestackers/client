@@ -13,6 +13,12 @@ import sm_data from "./data/sm_data"
 
 
 const App = () => {
+  const titleStyles = {
+    color: 'green',
+    fontSize: '1.8em',
+    marginBottom: '1em',
+    marginLeft: '1.3em'
+}
   return (
     <div>
         <div>
@@ -24,7 +30,14 @@ const App = () => {
         <Route exact path="/auth/login" component={Login}/>
         <Route exact path="/smoothies" component={AllSmoothies}/>
         <Route exact path="/newsmoothie" component={NewSmoothie}/>
-        <Route exact path="/smoothie" component={Smoothie}/>
+        <div className="singleSmoothi-background">
+          <div>
+            <h1 style={titleStyles}>Click on ViewAll to see all the smoothies</h1>
+            <div>
+              <Route exact path="/smoothie" component={Smoothie}/>
+            </div>
+          </div>
+        </div>
         </Switch>
         <Footer/>
         </Router>

@@ -39,7 +39,7 @@
     background-size: 100% 100%;
 }
 .text-container {
-    margin-top: 70px;
+    margin-top: 50px;
     margin-left: 120px;
     background-color: #ffffff;
     border: 1px solid black;
@@ -113,21 +113,30 @@ input[type=text] {
   }
 
   /* AllSmoothie page and Single Smoothie page */
-  .allSmoothie-singleSmoothi-background{
+  .allSmoothie-background{
     background-image:url("./../docs/viewAll.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
 
 }
+.singleSmoothi-background{
+    background-image:url("./../docs/viewAll.png"); 
+    background-repeat:no-repeat ;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+} 
+  
   .smoothieBox{
     background-image:url("./../docs/home-page.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
-    margin: 50px;
-    background-color: #ffffff;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    margin-top: 0px;
     border: 1px solid black;
     border-radius: 25px;
-    width: 500px;
+    width: 380px;
     height: 300px; 
  }
  .smoothieBoxContent{
@@ -137,6 +146,13 @@ input[type=text] {
     margin: 10px;
     color:green
  }
+
+ .container-allSmoothie{
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+ }
+
  .buttonStyles{
     display: flex;
     flex-direction: row;
@@ -164,4 +180,5 @@ input[type=text] {
     background-repeat:no-repeat ;
     background-size: 100% 100%;
 }
+
 
