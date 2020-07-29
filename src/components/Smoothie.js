@@ -14,6 +14,8 @@ import {deleteSmoothie} from '../services/smoothieServices'
   if (!smoothie) return null
 
   const {name,category, ingredients,instructions,fyi}= smoothie
+  const authoriseEditDelete = loggedInUser && loggedInUser === smoothie.username
+  console.log(loggedInUser, authoriseEditDelete)
   function handleEdit(event) {
     event.preventDefault()
     history.push(`/smoothies/edit/${smoothie._id}`)
@@ -30,7 +32,7 @@ import {deleteSmoothie} from '../services/smoothieServices'
             type: "setSmoothies",
             data: updatedSmoothies
         })
-        history.push("/")
+        history.push("/smoothies")
     }).catch((error) => {
         console.log("There was an error deleting smoothie", error)
     })
@@ -66,9 +68,12 @@ import {deleteSmoothie} from '../services/smoothieServices'
       </div>
       <br/>
       
-      
+      {authoriseEditDelete && (
+        <div>
       <input type="submit" value="Edit Smoothie" onClick={handleEdit}/>
       <input type="submit" value="Delete Smoothie" onClick={handleDelete}/><br/>
+      </div>)
+      }
 </form>
 
 </div>

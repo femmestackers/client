@@ -68,7 +68,7 @@ const EditSmoothie = ({history, match}) => {
             <form >
             <div>
                 <label>Smoothie name</label>
-                <input type="text" name="smoothie-name" placeholder="Enter a smoothie name" value={formState.name} onChange = {handleChange}/>
+                <input type="text" name="name" placeholder="Enter a smoothie name" value={formState.name} onChange = {handleChange}/>
             </div>
             <br/>
             <div>
@@ -97,7 +97,7 @@ const EditSmoothie = ({history, match}) => {
             <br/>
             <div>
                 <label>FYI(Any replacements, nutritional info?)</label>
-                <input type="text" name="instructions" placeholder="Goodness of this smoothie" value={formState.fyi} onChange = {handleChange}/>
+                <input type="text" name="fyi" placeholder="Goodness of this smoothie" value={formState.fyi} onChange = {handleChange}/>
             </div>
             <br/>
             

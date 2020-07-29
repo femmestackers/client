@@ -44,13 +44,17 @@ const App = () => {
   },[])
 
   useEffect(() => {
-    userAuthenticated().then((username) => {
+    userAuthenticated().then((response) => {
+      const username = response.data
       if(username) {
         dispatch({
           type: "setLoggedInUser",
           data: username
         })
       }
+    })
+    .catch((error)=> {
+      console.log("No user authenticated", error.message)
     })
   },[])
 
@@ -69,7 +73,7 @@ const App = () => {
     <Route exact path="/auth/register" component={Register}/>
     <Route exact path="/auth/login" component={Login}/>
     <Route exact path="/smoothies" component={AllSmoothies}/>
-    <Route exact path="/newsmoothie" component={NewSmoothie}/>
+    <Route exact path="/smoothies/new" component={NewSmoothie}/>
     <Route exact path="/smoothies/:id" render={(props) => <Smoothie {...props} smoothie={getSmoothieFromId(smoothies, props.match.params.id)} /> } />
     <Route exact path="/smoothies/edit/:id" component={EditSmoothie} />
     </Switch>
