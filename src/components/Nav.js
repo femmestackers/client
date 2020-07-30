@@ -23,10 +23,13 @@ const Nav = () =>{
 
     const {store, dispatch} = useGlobalState()
     const {loggedInUser} = store
+
+
     return (
         <div>
         <div className="navbar">
                 <div className="navelement1">
+                    <div className="logo"></div>
                     <p className="navtitle">SMOOTHIVERSE</p>
                 </div>
                 {loggedInUser 
@@ -47,4 +50,5 @@ const Nav = () =>{
     )
     }
     export default Nav
+
 

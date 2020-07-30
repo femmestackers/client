@@ -58,13 +58,15 @@ const App = () => {
     })
   },[])
 
+      
   // Create state reducer store and dispatcher
   const [store, dispatch] = useReducer(stateReducer,initialState)
   const {smoothies} = store
 
   const titleStyles = {
     color: 'green',
-    fontSize: '2.2em',
+    fontSize: '1.2em',
+    marginBottom: '2.2em',
   }
   return (
     <div>
@@ -78,12 +80,15 @@ const App = () => {
           <Route exact path="/auth/login" component={Login}/>
           <Route exact path="/smoothies" component={AllSmoothies}/>
           <Route exact path="/smoothies/new" component={NewSmoothie}/>
-          <div className="singleSmoothi-background">
+          <div className="single-smoothie-container">
             <div>
-              <h1 style={titleStyles}>Click on ViewAll to see all the smoothies</h1>
+              <br/>
+              <h1 style={titleStyles}>Click on ViewAllSmoothies to see all the smoothies</h1>
               <div>
               <Route exact path="/smoothies/:id" render={(props) => <Smoothie {...props} smoothie={getSmoothieFromId(smoothies, props.match.params.id)} /> } />
               </div>
+            </div>
+            <div className="background-pic-single-smoothi-box">
             </div>
           </div>
           <Route exact path="/smoothies/edit/:id" component={EditSmoothie} />
