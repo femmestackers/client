@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useGlobalState} from '../config/store'
 import { getSmoothieFromId, updateSmoothie } from '../services/smoothieServices';
+import AddIngredients from './AddIngredients'
 
 const EditSmoothie = ({history, match}) => {
 
@@ -24,7 +25,7 @@ const EditSmoothie = ({history, match}) => {
             username: smoothie.username,
             name: formState.name,
             category: formState.category,
-            ingredients: formState.ingredients,
+            ingredients: ingredients,
             instructions: formState.instructions,
             fyi: formState.fyi
         }
@@ -34,6 +35,7 @@ const EditSmoothie = ({history, match}) => {
                 type: "setSmoothies",
                 data: [changeSmoothie, ...otherSmoothie]
             })
+            alert("You have updated your smoothie")
             history.push(`/smoothies/${smoothie._id}`)
         }).catch((error) => {
             console.log("caught error on edit", error)
@@ -41,18 +43,21 @@ const EditSmoothie = ({history, match}) => {
         
     }
 
-    // Set initial form values to what is in the current expense
+    // Set initial form values to what is in the current smoothie
     const initialFormState = {
         name: "",
         category: "",
-        ingredients: "",
+        quantity: "",
         instructions: "",
         fyi: ""
     }
+
+    const initialIngredients = smoothie ? smoothie.ingredients : {}
     const[formState, setFormState] = useState(initialFormState)
+    const [ingredients, setIngredients] = useState(initialIngredients)
 
     useEffect(() => {
-        // Set the formState to the fields in the expense after mount and when expense changes
+        // Set the formState to the fields in the smoothie after mount and when smoothie changes
       smoothie && setFormState ({
         name: smoothie.name,
         category: smoothie.category ,
@@ -85,10 +90,10 @@ const EditSmoothie = ({history, match}) => {
                 </label>
             </div>
             <br/>
-            <div>
-                <label>Ingredients</label>
-                <input type="text" name="ingredients" placeholder="Enter ingredients" value={formState.ingredients} onChange = {handleChange}/>
-            </div>
+            <br/>
+      <div>
+          <AddIngredients ingredients={ingredients} setIngredients={setIngredients}/>
+      </div>
             <br/>
             <div>
                 <label>Instructions</label>
