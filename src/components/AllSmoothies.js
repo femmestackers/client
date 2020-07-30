@@ -30,14 +30,21 @@ const AllSmoothies = (props) =>{
     marginBottom: '1em',
     marginLeft: '1.3em'
 }
+const labelStyles = {
+  color: 'green',
+  fontSize: '0.7em',
+}
   
 return (
    <div className="allSmoothie-background">
       <div>
+          <br/>
           <div style={titleStyles}>
             All smoothies
           </div>
-          <div>
+          <div style={titleStyles}>
+            <label style={labelStyles}>
+            Select a category:
             <select value={selectedCategory} onChange={handleChange}> 
             <option value="Select a category">Select a category</option>
             <option value="Post workout">Post-workout</option>
@@ -47,6 +54,7 @@ return (
             <option value="Detox">Detox</option>
             <option value="Weight-loss">Weight-loss</option>
             </select>
+            </label>
           </div>
           <div className="container-allSmoothie">
             {smoothiesToDisplay.map(smoothie => (<Smoothie {...props} key={smoothie._id} smoothie={smoothie}/> ))}
