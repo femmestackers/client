@@ -22,6 +22,6 @@ describe("Register user", () => {
         cy.get("[data-cy=password]").type(fixture.newUser.password)
         cy.get("[data-cy=confirmpassword]").type(fixture.newUser.password)
 		cy.get("[data-cy=signupButton]").click()
-		cy.get('[data-cy=loginNav').find("[data-cy=logout]")
+		cy.get('[data-cy=loginNav]').find("[data-cy=logout]")
 	})
 })

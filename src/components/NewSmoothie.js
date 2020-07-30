@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Styles.css'
 import {useGlobalState} from '../config/store'
 import {addSmoothie} from '../services/smoothieServices'
+import AddIngredients from './AddIngredients'
 
 
 
@@ -22,11 +23,13 @@ const NewSmoothie = ({history}) => {
     const newSmoothie = {
         name: formState.name,
         category: formState.category,
-        ingredients: formState.ingredients,
+        ingredients: ingredients,
         instructions: formState.instructions,
         fyi: formState.fyi
     }
+    console.log(newSmoothie)
     addSmoothie(newSmoothie).then((newSmoothie) => {
+      
         dispatch({
             type: "setSmoothies",
             data: [newSmoothie,...smoothies]
@@ -41,11 +44,12 @@ const NewSmoothie = ({history}) => {
 const initialFormState = {
   name: "",
   category: "Pregnancy and post natal",
-  ingredients: "",
   instructions: "",
   fyi: ""
 }
 const[formState, setFormState] = useState(initialFormState)
+const[ingredients, setIngredients]= useState({})
+
 const {store, dispatch} = useGlobalState()
 const {smoothies} = store
 
@@ -74,8 +78,7 @@ const {smoothies} = store
       </div>
       <br/>
       <div>
-          <label>Ingredients</label>
-          <input type="text" name="ingredients" placeholder="Enter ingredients" value={formState.ingredients} onChange={handleChange}/>
+          <AddIngredients ingredients={ingredients} setIngredients={setIngredients}/>
       </div>
       <br/>
       <div>
