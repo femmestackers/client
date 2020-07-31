@@ -80,17 +80,9 @@ const App = () => {
           <Route exact path="/auth/login" component={Login}/>
           <Route exact path="/smoothies" component={AllSmoothies}/>
           <Route exact path="/smoothies/new" component={NewSmoothie}/>
-          <div className="single-smoothie-container">
-            <div>
-              <br/>
-              <h1 style={titleStyles}>Click on ViewAllSmoothies to see all the smoothies</h1>
-              <div>
+      
               <Route exact path="/smoothies/:id" render={(props) => <Smoothie {...props} smoothie={getSmoothieFromId(smoothies, props.match.params.id)} /> } />
-              </div>
-            </div>
-            <div className="background-pic-single-smoothi-box">
-            </div>
-          </div>
+              
           <Route exact path="/smoothies/edit/:id" component={EditSmoothie} />
           </Switch>
           <Footer/>

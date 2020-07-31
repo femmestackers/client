@@ -48,8 +48,8 @@ const labelStyles = {
     fontSize: '1.2em',
 }
 const titleStyles = {
-    color: 'green',
-    fontSize: '2.2em',
+    color: 'blue',
+    fontSize: '2em',
 }
 
 return (
@@ -57,23 +57,28 @@ return (
   <div className="formbox"> 
   {errorMessage && <p data-cy="errorMessage" style={{color: "red"}}>{errorMessage}</p>}
   <form>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <div>
           <label style={titleStyles}>Signup</label>
        </div>
       <div>
-          <label style={labelStyles}>Username</label>
+          <label style={labelStyles}>Username</label><br/>
           <input data-cy="username" type="text" name="username" placeholder="Enter a username"  onChange={handleChange}/>
       </div>
       <div>
-          <label style={labelStyles}>Email</label>
+          <label style={labelStyles}>Email</label><br/>
           <input data-cy="email" type="text" name="email" placeholder="Enter an email"  onChange={handleChange}/>
       </div>
       <div>
-          <label style={labelStyles}>Password</label>
+          <label style={labelStyles}>Password</label><br/>
           <input data-cy="password" type="password" name="password" placeholder="Enter a password"  onChange={handleChange}/>
       </div>
       <div>
-          <label style={labelStyles}>Confirm Password</label>
+          <label style={labelStyles}>Confirm Password</label><br/>
           <input data-cy="confirmpassword" type="password" name="confirm-password" placeholder="Confirm the password"  onChange={handleChange}/>
       </div>
       <input data-cy="signupButton" type="submit" value="Signup" onClick={handleSubmit}/>

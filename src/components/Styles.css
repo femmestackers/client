@@ -109,42 +109,57 @@
 }
 
 .formbox{
-    margin-top: 70px;
+    margin-top: 30px;
     margin-left: 50px;
     width: 1100px;
     height: 130px;
 }
 
 input[type=text] {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
-   
     width: 180px;
     height: 18px;
-    ;
+    border-radius: 5px;
+    border-color: #F3C623;
   }
+
+  input[type=textarea] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: #F3C623;
+  }
+
   input[type=password] {
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 20px;
-    margin-left: 20px;
     margin-right: 200px;
     width: 180px;
-    height: 25px;
+    height: 18px;
+    border-radius: 5px;
+    border-color: #F3C623;
   }
   input[type=submit] {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 120px;
     height: 30px;
+    border-radius: 5px;
+    border-color: #F3C623;
+    background-color: #F3C623;
   }
 
+
   /* AllSmoothie page and Single Smoothie page */
-  .allSmoothie-background{
+  /* .allSmoothie-background{
     background-image:url("./../docs/singleSmoothie.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
 
-}
+} */
 .single-smoothie-container{
    display:flex;
    flex-direction: row;
@@ -152,28 +167,31 @@ input[type=text] {
 } 
 
 .background-pic-single-smoothi-box{
-    background-image:url("./../docs/singleSmoothie.png"); 
+    background-image:url("./../docs/Pineapple-Paradise.png"); 
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 70vw;
-    height: 80vh;
-    border: solid 5px #067D44;
+    width: 40vw;
+    height: 60vh;
+    /* border: solid 5px #067D44; */
+    border: 5px solid #F3C623;
     border-radius: 25px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 35px;
+    margin-left: 40px;
     margin-right: 20px;
+    margin-bottom: 65px;
 }
   
   .smoothieBox{
     background-image:url("./../docs/viewAll.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
-    margin-left: 50px;
-    margin-bottom: 50px;
+    margin-left: 100px;
+    margin-bottom: 65px;
     margin-top: 0px;
-    border: 1px solid black;
+    border: 5px solid #F3C623; 
+    /* border: solid 5px #067D44; */
     border-radius: 25px;
-    width: 380px;
+    width: 40vw;
     height: 400px; 
     transition: background 0.2s wase-in, transform .2s .1s ease-in-out;
  }

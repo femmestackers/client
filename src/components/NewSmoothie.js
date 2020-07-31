@@ -54,27 +54,37 @@ const {store, dispatch} = useGlobalState()
 const {smoothies} = store
 
 const labelStyles = {
-  color: 'black',
+  color: 'green',
   fontSize: '1em',
 }
 const titleStyles = {
-color: 'green',
-fontSize: '2em',
+color: 'blue',
+fontSize: '1.5em',
+}
+const selectStyles = {
+  color: 'blue',
+  fontSize: '.7em',
+  marginLeft: '1em',
+  borderRadius: '.5em',
+  borderColor: '#F3C623',
+  backgroundColor: 'lightblue',
+  textAlign:'center',
+  height:'2.2em'
 }
 
 return (
   <div className="add-smoothie-container">
     <div className="formbox">
-      <h1 style={titleStyles}>Post your Smoothie!!</h1>    
+      <h1 style={titleStyles}>Post your Smoothie!!</h1><br/>  
       <form >
         <div>
-            <label style={labelStyles}>Smoothie name</label>
+            <label style={labelStyles}>Smoothie name</label><br/>
             <input type="text" name="name" placeholder="Enter a smoothie name" value={formState.name} onChange = {handleChange}/>
         </div>
         <div>
             <label style={labelStyles}>
             Select a category
-            <select name="category" value={formState.category} onChange={handleChange}>            
+            <select style={selectStyles} name="category" value={formState.category} onChange={handleChange}>            
             <option value="Pregnancy and post natal">Pregnancy and post natal</option>
             <option value="Nut free">Nut free</option>
             <option value="Diabetic-friendly">Diabetic-friendly</option>
@@ -83,17 +93,17 @@ return (
             <option value="Post workout">Post workout</option>
             </select>
             </label>
-        </div>
+        </div><br/>
         <div>
             <AddIngredients ingredients={ingredients} setIngredients={setIngredients}/>
         </div>
         <div>
-            <label style={labelStyles}>Instructions</label>
-            <input type="text" name="instructions" placeholder="Enter the instructions" value={formState.instructions} onChange={handleChange}/>
+            <label style={labelStyles}>Instructions</label><br/>
+            <input type="textarea" name="instructions" placeholder="Enter the instructions" value={formState.instructions} onChange={handleChange}/>
         </div>
         <div>
-            <label style={labelStyles}>FYI(Any replacements, nutritional info?)</label>
-            <input type="text" name="fyi" placeholder="Goodness of this smoothie" value={formState.fyi} onChange={handleChange}/>
+            <label style={labelStyles}>FYI(Any replacements, nutritional info?)</label><br/>
+            <input type="textarea" name="fyi" placeholder="Goodness of this smoothie" value={formState.fyi} onChange={handleChange}/>
         </div>
         <input onClick={handleSubmit} type="submit" value="Post Smoothie"/>
       </form>

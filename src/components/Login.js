@@ -62,10 +62,10 @@ const Login = ({history}) => {
             <form>
             {errorMessage && <p data-cy="errorMessage" style={{color: "red"}}>{errorMessage}</p>}
             <div>
-            <label style={labelStyles}>Username:<input data-cy="username" type="text" name="username" onChange={handleChange}/></label>
+            <label style={labelStyles}>Username:<br/><input data-cy="username" type="text" name="username" onChange={handleChange}/></label>
             </div>
             <div>
-            <label style={labelStyles}>Password:<input  data-cy="password" type="password" name="password" onChange={handleChange}/></label>
+            <label style={labelStyles}>Password:<br/><input data-cy="password" type="password" name="password" onChange={handleChange}/></label>
             </div>
             <input  data-cy="loginButton" type="submit" value="Login" onClick={handleSubmit}/>
             </form>

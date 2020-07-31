@@ -32,8 +32,17 @@ const AllSmoothies = (props) =>{
         marginLeft: '1.3em'
     }
     const labelStyles = {
-      color: 'green',
+      color: 'blue',
       fontSize: '0.7em',
+      marginLeft:'15em'
+    }
+    const selectStyles = {
+      color: 'blue',
+      fontSize: '0.7em',
+      marginLeft: '1em',
+      borderRadius: '1em',
+      backgroundColor: 'lightblue',
+      textAlign:'center'
     }
   
     return (
@@ -43,8 +52,8 @@ const AllSmoothies = (props) =>{
             
             <div style={titleStyles}>
               <label style={labelStyles}>
-              Select a category of smoothies:
-              <select value={selectedCategory} onChange={handleChange}> 
+              Select a Category of Smoothies:
+              <select style={selectStyles} value={selectedCategory} onChange={handleChange}> 
               <option value="Select a category">Select a category</option>
               <option value="Post workout">Post-workout</option>
               <option value="Nut free">Nut free</option>
