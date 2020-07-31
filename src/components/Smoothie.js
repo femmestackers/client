@@ -5,7 +5,6 @@ import './Styles.css'
 import {useGlobalState} from '../config/store'
 import {deleteSmoothie} from '../services/smoothieServices'
 
-
  const Smoothie = ({history, smoothie}) => {
 
   const {store, dispatch} = useGlobalState()
