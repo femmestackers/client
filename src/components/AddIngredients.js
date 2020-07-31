@@ -8,11 +8,14 @@ const AddIngredients = ({ingredients, setIngredients}) => {
 
     useEffect(()=>{
       function populateIngredients() {  
+        let fields = [...inputFields]
         Object.keys(ingredients).forEach((ingredient)=> {
-          setInputFields([...inputFields, {ingredient:ingredient, quantity: ingredients[ingredient]}])
+          fields.push({ingredient:ingredient, quantity: ingredients[ingredient]})
         })
+        setInputFields(fields)
       }
       populateIngredients()
+      console.log("input fields", inputFields)
     }, [])
        
 
@@ -41,15 +44,14 @@ const AddIngredients = ({ingredients, setIngredients}) => {
   };
   const handleSave=(event)=> {
     event.preventDefault()
-      console.log(inputFields)
+      console.log("handle save", inputFields)
+      let updatedIngredients = {}
       for (let field of inputFields){
         const key= field.ingredient
         const value = field.quantity
-        setIngredients({
-          ...ingredients,
-          [key]:value
-        })
+        updatedIngredients[key]=value
       }
+      setIngredients(updatedIngredients)
   }
 
   const labelStyles = {
@@ -72,7 +74,7 @@ const AddIngredients = ({ingredients, setIngredients}) => {
   borderColor: '#F3C623',
   backgroundColor: '#F3C623'
  }
-
+console.log("input fields", inputFields)
 return (
     <div>
         <div className="form-row">

@@ -56,7 +56,7 @@ const titleStyles = {
 
     return (
         <div className="single-smoothie-container">
-                <div second-single-smoothie-container>
+                <div className="second-single-smoothie-container">
                     <br/> <br/>
                     <div>
             <div className="smoothieBox">

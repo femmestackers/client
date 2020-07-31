@@ -19,6 +19,7 @@ const EditSmoothie = ({history, match}) => {
         })
     }
     function handleSubmit (event) {
+        console.log("updating", ingredients)
         event.preventDefault()
         const changeSmoothie = {
             _id: smoothie._id,
