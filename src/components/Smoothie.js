@@ -11,7 +11,6 @@ import {deleteSmoothie} from '../services/smoothieServices'
 
   const {store, dispatch} = useGlobalState()
   const {smoothies, loggedInUser} = store
-  // where no expenses exist, return null
   if (!smoothie) return null
 
   const {name,category, ingredients,instructions,fyi}= smoothie

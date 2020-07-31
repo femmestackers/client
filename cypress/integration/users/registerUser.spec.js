@@ -10,7 +10,7 @@ beforeEach(() => {
 	})
 })
 
-describe("Register user", () => {
+describe.skip("Register user", () => {
 	it("should route to /auth/register", () => {
 		cy.get("[data-cy=signup]").click()
 		cy.url().should("include", "/auth/register")
