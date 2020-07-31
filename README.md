@@ -51,9 +51,14 @@ We delegated tasks among team members on a daily basis. We had daily meetings at
 
 **R8. Provides evidence of user testing**:
 ***1. In the development environment***
-We tested using client.http and Postman. We have included screenshots of both passed and failed tests and have documented in the spreadsheet the reason why it was failing and how we corrected it.
+We tested using client.http and Postman. We have included screenshots of both passed and failed tests and have documented in the spreadsheet the reason why it was failing and how we corrected it. 
 
 
+
+- Development Testing Spreadsheet ![mern-server](./src/docs/server.png)
+<br>
+Screenshots for test done in Client.http and Postman
+<br>
 - Register a new user ![register-new-user](./src/docs/register-new-user.png)
 - Login user ![user-login](./src/docs/user-login.png)
 - Get all smoothies ![getAllSmoothies](./src/docs/get-all-smoothies.png)
@@ -69,6 +74,20 @@ We tested using client.http and Postman. We have included screenshots of both pa
 - Permission error to delete smoothie![UnauthorisedDelete](./src/docs/unauthorised-delete.png)
 - Logout user ![Logout-user](./src/docs/logout-user.png)
 
+MOCHA TEST RESULTS SCREENSHOTS
+
+- Incorrect smoothie by id ![smoothie id](./src/docs/incorrect-smoothieById.png)
+
+- Name undefined ![Undefined](./src/docs/name-undefined.png)
+
+- Condition Error ![Condition Error](./src/docs/condition-error.png)
+
+- Unmatched Smoothie name ![Unmatch Name](./src/docs/unmatched-smoothie-name.png)
+
+- All test passing ![Test Passed](./src/docs/all-tests-passing.png)
+
+
+
 
 
 
@@ -76,8 +95,7 @@ We tested using client.http and Postman. We have included screenshots of both pa
 
 2. In the production environment
 
-
-
+- Production Testing Spreadsheet ![mern-client](./src/docs/client.png)
 <br>
 
 **R9 Utilises a formal testing framework**
