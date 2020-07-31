@@ -67,19 +67,39 @@ const EditSmoothie = ({history, match}) => {
       })
     },[smoothie])
 
+    const labelStyles = {
+        color: 'green',
+        fontSize: '1em',
+      }
+      const titleStyles = {
+      color: 'blue',
+      fontSize: '1.5em',
+      }
+      const selectStyles = {
+        color: 'blue',
+        fontSize: '.7em',
+        marginLeft: '1em',
+        borderRadius: '.5em',
+        borderColor: '#F3C623',
+        backgroundColor: 'lightblue',
+        textAlign:'center',
+        height:'2.2em'
+      }
+
     return (
         <div className="first-container-addsmoothie">
-            <h1>Edit your Smoothie!!</h1>    
+            <div className="formbox">
+            <h1 style={titleStyles}>Edit your Smoothie!!</h1>    
             <form >
             <div>
-                <label>Smoothie name</label>
+                <label style={labelStyles}>Smoothie name</label>
                 <input type="text" name="name" placeholder="Enter a smoothie name" value={formState.name} onChange = {handleChange}/>
             </div>
             <br/>
             <div>
-                <label>
+                <label style={labelStyles}>
                 Select a smoothie category:
-                <select value={formState.category} onChange={handleChange}>            
+                <select style={selectStyles} value={formState.category} onChange={handleChange}>            
                   <option value="Pregnancy and post natal">Pregnancy and post natal</option>
                   <option value="Nut free">Nut free</option>
                   <option value="Diabetic-friendly">Diabetic-friendly</option>
@@ -96,12 +116,12 @@ const EditSmoothie = ({history, match}) => {
       </div>
             <br/>
             <div>
-                <label>Instructions</label>
+                <label style={labelStyles}>Instructions</label>
                 <input type="text" name="instructions" placeholder="Enter the instructions" value={formState.instructions} onChange = {handleChange}/>
             </div>
             <br/>
             <div>
-                <label>FYI(Any replacements, nutritional info?)</label>
+                <label style={labelStyles}>FYI(Any replacements, nutritional info?)</label>
                 <input type="text" name="fyi" placeholder="Goodness of this smoothie" value={formState.fyi} onChange = {handleChange}/>
             </div>
             <br/>
@@ -110,12 +130,8 @@ const EditSmoothie = ({history, match}) => {
        
       </form>
       </div>
+      </div>
           );
         }
-    
-      
-
-
-
 
 export default EditSmoothie

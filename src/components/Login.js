@@ -50,23 +50,28 @@ const Login = ({history}) => {
         })		
     }
 
-   
 
-
-return (
+    const labelStyles = {
+        color: 'green',
+        fontSize: '1.2em',
+    }
+    
+    return (
     <div className="first-container-login">
-        <form>
+        <div >
+            <form>
             {errorMessage && <p data-cy="errorMessage" style={{color: "red"}}>{errorMessage}</p>}
             <div>
-                <label>Username<input data-cy="username" type="text" name="username" onChange={handleChange}/></label>
+            <label style={labelStyles}>Username:<br/><input data-cy="username" type="text" name="username" onChange={handleChange}/></label>
             </div>
             <div>
-                <label>Password:<input data-cy="password" type="password" name="password" onChange={handleChange}/></label>
-            </div><br/>
-                <input data-cy="loginButton" type="submit" name="Login" onClick={handleSubmit}/> 
-    </form>
+            <label style={labelStyles}>Password:<br/><input data-cy="password" type="password" name="password" onChange={handleChange}/></label>
+            </div>
+            <input  data-cy="loginButton" type="submit" value="Login" onClick={handleSubmit}/>
+            </form>
+        </div>
     </div>
-      )
-}
+    )
+    }
 
 export default Login

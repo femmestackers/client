@@ -52,17 +52,34 @@ const AddIngredients = ({ingredients, setIngredients}) => {
       }
   }
 
+  const labelStyles = {
+    color: 'green',
+    fontSize: '1em',
+}
 
+ const plusStyles= {
+  marginBottom: '1em',
+  width: '2em',
+  borderRadius: '.5em',
+  borderColor: '#F3C623',
+  backgroundColor: '#F3C623'
+ }
+
+ const saveStyles= {
+  marginBottom: '1em',
+  width: '10em',
+  borderRadius: '.5em',
+  borderColor: '#F3C623',
+  backgroundColor: '#F3C623'
+ }
 
 return (
     <div>
-      
-     
         <div className="form-row">
           {inputFields.map((inputField, index) => (
             <Fragment key={`${inputField}~${index}`}>
               <div className="form-group col-sm-6">
-                <label htmlFor="ingredient">Ingredient</label>
+                <label style={labelStyles} htmlFor="ingredient">Ingredient</label><br/>
                 <input onChange={event => handleInputChange(index, event)}
                   type="text"
                   className="form-control"
@@ -72,7 +89,7 @@ return (
                 />
               </div>
               <div className="form-group col-sm-4">
-                <label htmlFor="quantity">Quantity</label>
+                <label style={labelStyles} htmlFor="quantity">Quantity</label><br/>
                 <input onChange={event => handleInputChange(index, event)}
                   type="text"
                   className="form-control"
@@ -82,14 +99,14 @@ return (
                 />
               </div>
               <div className="form-group col-sm-2">
-                <button
+                <button style={plusStyles}
                   className="btn btn-link"
                   type="button"
                   onClick={() => handleRemoveFields(index)}
                 >
                   -
                 </button>
-                <button
+                <button style={plusStyles}
                   className="btn btn-link"
                   type="button"
                   onClick={() => handleAddFields()}
@@ -101,11 +118,11 @@ return (
           ))}
         </div>
         <div className="submit-button">
-          <button
+          <button style={saveStyles}
             className="btn btn-primary mr-2"
             onClick={handleSave}
           >
-            Save
+            Save Ingredients
           </button>
         </div>
         <br/>
