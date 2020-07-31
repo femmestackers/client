@@ -5,6 +5,8 @@ import './Styles.css'
 import {useGlobalState} from '../config/store'
 import {deleteSmoothie} from '../services/smoothieServices'
 
+
+
  const Smoothie = ({history, smoothie}) => {
 
   const {store, dispatch} = useGlobalState()
@@ -37,47 +39,64 @@ import {deleteSmoothie} from '../services/smoothieServices'
     })
 }
 
-    
-    return (
-      
-  <div>
-      <form>
-      <div>
-       <Link to={`/smoothies/${smoothie._id}`}>
+const labelStyles = {
+    color: 'green',
+    fontSize: '1.2em',
+}
+const nameStyles = {
+    color: 'blue',
+    fontSize: '1.2em',
+}
 
-          <label>Smoothie name:{name}</label>
-          </Link>
-      </div>
-      <br/>
-      <div>
-          <label>Smoothie category:{category}</label>
-      </div>
-      <br/>
-      <div>
-          <label>Ingredients:</label>
-          <Ingredients ingredients= {ingredients} />
-      </div>
-      <br/>
-      <div>
-          <label>Instructions:{instructions}</label>
-      </div>
-      <br/>
-      <div>
-          <label>Fyi:{fyi}</label>
-      </div>
-      <br/>
-      
-      {authoriseEditDelete && (
-        <div>
-      <input type="submit" value="Edit Smoothie" onClick={handleEdit}/>
-      <input type="submit" value="Delete Smoothie" onClick={handleDelete}/><br/>
-      </div>)
-      }
-</form>
-
-</div>
-    );
+const titleStyles = {
+    color: 'green',
+    fontSize: '1.2em',
+    marginBottom: '2.2em',
   }
 
+    return (
+        <div className="single-smoothie-container">
+                <div second-single-smoothie-container>
+                    <br/> <br/>
+                    <div>
+            <div className="smoothieBox">
+                <form className="smoothieBoxContent">  
+                <div>
+                    <Link to={`/smoothies/${smoothie._id}`}>
+                    <label style={nameStyles}>Smoothie name:{name}</label>
+                    </Link>
+                </div>
+                <br/>
+                <div>
+                    <label style={labelStyles}>Smoothie category:{category}</label>
+                </div>
+                <br/>
+                <div>
+                    <label style={labelStyles}>Ingredients:</label>
+                    <Ingredients ingredients= {ingredients} />
+                </div>
+                <br/>
+                <div>
+                    <label style={labelStyles}>Instructions:{instructions}</label>
+                </div>
+                <br/>
+                <div>
+                    <label style={labelStyles}>Fyi:{fyi}</label>
+                </div>
+                {authoriseEditDelete && (
+                    <div className="buttonStyles">
+                    <input type="submit" value="Edit Smoothie" onClick={handleEdit}/><br/>
+                    <input type="submit" value="Delete Smoothie" onClick={handleDelete}/>
+                    </div>)
+                }
+                </form>
+            </div>
+                    </div>
+            </div>
+            <div className="background-pic-single-smoothi-box">
+            </div>
+</div>
+    );
+}
 
 export default Smoothie

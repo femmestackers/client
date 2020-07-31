@@ -29,6 +29,7 @@ const Nav = () =>{
         <div>
         <div className="navbar">
                 <div className="navelement1">
+                    <div className="logo"></div>
                     <p className="navtitle">SMOOTHIVERSE</p>
                 </div>
                 {loggedInUser 
@@ -39,15 +40,15 @@ const Nav = () =>{
                     <Link className="navtext" to="/smoothies/new" >Add Smoothie</Link>
                     <Link data-cy="logout" className="navtext" to="/" onClick={handleLogout}>Logout</Link>
                 </div>)
-                 : (<div data-cy="logoutNav">
+                 : (<div data-cy="logoutNav" className="navelement2">
                  <Link className="navtext" to="/" >Home</Link>
                  <Link data-cy="signup" className="navtext" to="/auth/register" >Signup</Link>
                  <Link data-cy="login" className="navtext" to="/auth/login" >Login</Link>
                  </div>)}
         </div>
         </div>
-
     )
     }
-
     export default Nav
+
+

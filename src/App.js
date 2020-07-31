@@ -62,24 +62,26 @@ const App = () => {
   // Create state reducer store and dispatcher
   const [store, dispatch] = useReducer(stateReducer,initialState)
   const {smoothies} = store
-
+  
   return (
     <div>
-    <StateContext.Provider value= {{store, dispatch}}>
-    <Router>
-    <Nav/>
-    <Switch>
-    <Route exact path="/" component={Home}/>
-    <Route exact path="/auth/register" component={Register}/>
-    <Route exact path="/auth/login" component={Login}/>
-    <Route exact path="/smoothies" component={AllSmoothies}/>
-    <Route exact path="/smoothies/new" component={NewSmoothie}/>
-    <Route exact path="/smoothies/:id" render={(props) => <Smoothie {...props} smoothie={getSmoothieFromId(smoothies, props.match.params.id)} /> } />
-    <Route exact path="/smoothies/edit/:id" component={EditSmoothie} />
-    </Switch>
-    <Footer/>
-    </Router> 
-    </StateContext.Provider>
+        <div>
+          <StateContext.Provider value= {{store, dispatch}}>
+          <Router>
+          <Nav/>
+          <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/auth/register" component={Register}/>
+          <Route exact path="/auth/login" component={Login}/>
+          <Route exact path="/smoothies" component={AllSmoothies}/>
+          <Route exact path="/smoothies/new" component={NewSmoothie}/>
+          <Route exact path="/smoothies/:id" render={(props) => <Smoothie {...props} smoothie={getSmoothieFromId(smoothies, props.match.params.id)} /> } />        
+          <Route exact path="/smoothies/edit/:id" component={EditSmoothie} />
+          </Switch>
+          <Footer/>
+          </Router>
+          </StateContext.Provider>
+        </div>
     </div>
   )
 }

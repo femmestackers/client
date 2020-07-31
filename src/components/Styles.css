@@ -2,90 +2,266 @@
     margin: 0;
 }
 
-.first-container-home{
+.navbar{
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 18vh;
+    color:#067D44;
+    background-color: #F3C623;
+}
+        .navtext:hover{
+            background-color: #067D44;
+            color: white;
+            padding: 5px;
+        }
+
+        .navelement1{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;;
+        }
+
+        .navtitle{
+            font-size: 50px;
+            margin-right: 15px;
+        }
+
+        .logo{
+            width: 100px;
+            height: 80px;
+            border:black;
+            margin-right: 10px;
+            background-image:url("./../docs/logo2.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .navelement2{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items:flex-end;
+        }
+            .navtext{
+                color: #067D44;
+                font-size: 20px;
+                margin-right: 30px;
+                margin-bottom: 5px;
+                padding: 5px;
+            }
+/* HOME PAGE */
+.container-home{
+    display: flex;
+    flex-direction: row;
     width: 100vw;
     height: 100vh;
-    background-image:url("./../docs/home-page.png"); 
-    background-repeat:no-repeat ;
-    background-size: 100% 100%;
 }
-    .second-container-home {
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        justify-content: flex-start;
-        align-items:center;
-        /* //background-image:url("./../docs/home-page.png");  */
-        /* //background-repeat:no-repeat ; */
-        /* //background-size: 100% 100%; */
-    }
-            .navbar{
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                width: 100vw;
-                height: 15vh;
-                color:#067D44;
-                background-color: #F3C623;
-            }
-                    .navtitle{
-                        font-size: 50px;
-                        margin-left:500px;
-                        margin-bottom: 10px;
-                    }
-                    .navelement2{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-end;
-                        align-items:flex-end;
-                    }
-                        .navtext{
-                            color: #067D44;
-                            font-size: 20px;
-                            margin-right: 30px;
-                            margin-bottom: 5px;
-                        }
-            .welcometext{
-                font-family: "Merriweather", serif;
-                font-size: 1.4vw;
-                margin-top: 50px;
-                color:#067D44
-            }
-            .container-footer{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items:center;
-                width: 100vw;
-                height: 5vh;
-                color:#067D44;
-                background-color: #F3C623;
-            }
+
+.pic-container{
+    width: 80vw;
+    height: 100vh;
+    background-image:url("./../docs/home-page.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-left: 1px solid #067D44;
+}
+.text-container {
+    background-color: #ffffff;
+    border-right: 1px solid #067D44;
+    /* border-radius: 25px; */
+    width: 300px;
+    height: 100vh; 
+  }
+        .welcometext{
+            font-family: "Merriweather", serif;
+            font-size: 1.4vw;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            color:#067D44;
+        } 
+
+/* LOGIN PAGE AND SIGNUP PAGE */
 .first-container-login{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items:center;
     width: 100vw;
     height: 100vh;
     background-image:url("./../docs/Login-page.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
 }
+
 .first-container-signup{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:flex-start;
     width: 100vw;
     height: 100vh;
     background-image:url("./../docs/SignUp-page.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
 }
+
+.formbox{
+    margin-top: 30px;
+    margin-left: 50px;
+    width: 1100px;
+    height: 130px;
+}
+
+input[type=text] {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 180px;
+    height: 18px;
+    border-radius: 5px;
+    border-color: #F3C623;
+  }
+
+  input[type=textarea] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: #F3C623;
+  }
+
+  input[type=password] {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-right: 200px;
+    width: 180px;
+    height: 18px;
+    border-radius: 5px;
+    border-color: #F3C623;
+  }
+  input[type=submit] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #F3C623;
+    background-color: #F3C623;
+  }
+
+
+  /* AllSmoothie page and Single Smoothie page */
+  /* .allSmoothie-background{
+    background-image:url("./../docs/singleSmoothie.png"); 
+    background-repeat:no-repeat ;
+    background-size: 100% 100%;
+
+} */
+.single-smoothie-container{
+   display:flex;
+   flex-direction: row;
+
+} 
+
+.background-pic-single-smoothi-box{
+    background-image:url("./../docs/Pineapple-Paradise.png"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40vw;
+    height: 60vh;
+    /* border: solid 5px #067D44; */
+    border: 5px solid #F3C623;
+    border-radius: 25px;
+    margin-top: 35px;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-bottom: 65px;
+}
+  
+  .smoothieBox{
+    background-image:url("./../docs/cup.png"); 
+    background-repeat:no-repeat ;
+    background-size: 100% 100%;
+    margin-left: 100px;
+    margin-bottom: 65px;
+    margin-top: 0px;
+    border: 5px solid #F3C623; 
+    /* border: solid 5px #067D44; */
+    border-radius: 25px;
+    width: 40vw;
+    height: 400px; 
+    transition: background 0.2s wase-in, transform .2s .1s ease-in-out;
+ }
+
+ .smoothieBox:hover{
+     transform: scaleX(1.1) scaleY(1.1) rotateY(10deg);
+ }
+ .smoothieBoxContent{
+    font-family: "Merriweather", serif;
+    font-size: 1vw;
+    font-weight: bold;
+    margin: 10px;
+    color:#067D44;
+ }
+
+ /* NEWSMOOTHIE */
+
+ .add-smoothie-container{
+     display:flex;
+     flex-direction: row;
+ }
+
+ .background-add-smoothie-pic-box{
+    background-image:url("./../docs/addSmoothie.png"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    border: solid 5px #067D44;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 300px;
+    margin-left: 5px;
+    margin-right: 40px;
+ }
+
+ .container-allSmoothie{
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+ }
+
+ .buttonStyles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+
+
+.container-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    width: 100vw;
+    height: 5vh;
+    color:#067D44;
+    background-color: #F3C623;
+}
+
 .first-container-addsmoothie{
     display: flex;
     flex-direction: column;
-    background-image:url("./../docs/SignUp-page.png"); 
-    background-repeat:repeat;
-    background-size: 100%;
+    width: 100vw;
+    height: 150vh;
+    background-image:url("./../docs/addSmoothie.png"); 
+    background-repeat:no-repeat ;
+    background-size: 100% 100%;
 }
+
+
+
+

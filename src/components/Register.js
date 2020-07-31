@@ -1,4 +1,3 @@
-import './Styles.css'
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {registerUser} from '../services/authServices'
@@ -44,35 +43,50 @@ const Register = ({history}) => {
     })
 }
 
+const labelStyles = {
+    color: 'green',
+    fontSize: '1.2em',
+}
+const titleStyles = {
+    color: 'blue',
+    fontSize: '2em',
+}
+
 return (
-  <div className="first-container-signup">
-      {errorMessage && <p data-cy="errorMessage" style={{color: "red"}}>{errorMessage}</p>}
-      <form>
-          <div>
-              <label>Username</label>
-              <input data-cy="username" type="text" name="username" placeholder="Enter a username"  onChange={handleChange}/>
-          </div>
-          <br/>
-          <div>
-              <label>Email</label>
-              <input data-cy="email" type="text" name="email" placeholder="Enter an email"  onChange={handleChange}/>
-          </div>
-          <br/>
-          <div>
-              <label>Password</label>
-              <input data-cy="password" type="password" name="password" placeholder="Enter a password"  onChange={handleChange}/>
-          </div>
-          <br/>
-          <div>
-              <label>Confirm Password</label>
-              <input data-cy="confirmpassword" type="password" name="confirm-password" placeholder="Confirm the password"  onChange={handleChange}/>
-          </div>
-          <br/>
-          <input data-cy="signupButton" type="submit" value="Signup" onClick={handleSubmit}/>
-      </form>
+<div className="first-container-signup">
+  <div className="formbox"> 
+  {errorMessage && <p data-cy="errorMessage" style={{color: "red"}}>{errorMessage}</p>}
+  <form>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div>
+          <label style={titleStyles}>Signup</label>
+       </div>
+      <div>
+          <label style={labelStyles}>Username</label><br/>
+          <input data-cy="username" type="text" name="username" placeholder="Enter a username"  onChange={handleChange}/>
+      </div>
+      <div>
+          <label style={labelStyles}>Email</label><br/>
+          <input data-cy="email" type="text" name="email" placeholder="Enter an email"  onChange={handleChange}/>
+      </div>
+      <div>
+          <label style={labelStyles}>Password</label><br/>
+          <input data-cy="password" type="password" name="password" placeholder="Enter a password"  onChange={handleChange}/>
+      </div>
+      <div>
+          <label style={labelStyles}>Confirm Password</label><br/>
+          <input data-cy="confirmpassword" type="password" name="confirm-password" placeholder="Confirm the password"  onChange={handleChange}/>
+      </div>
+      <input data-cy="signupButton" type="submit" value="Signup" onClick={handleSubmit}/>
+  </form>
   </div>
+</div>
 )
-    }
+}
 
 
 export default Register
