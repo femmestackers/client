@@ -58,7 +58,9 @@ We tested using client.http and Postman. We have included screenshots of both pa
 - Development Testing Spreadsheet ![mern-server](./src/docs/server.png)
 <br>
 Screenshots for test done in Client.http and Postman
+
 <br>
+
 - Register a new user ![register-new-user](./src/docs/register-new-user.png)
 - Login user ![user-login](./src/docs/user-login.png)
 - Get all smoothies ![getAllSmoothies](./src/docs/get-all-smoothies.png)
