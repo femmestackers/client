@@ -182,7 +182,7 @@ input[type=text] {
 }
   
   .smoothieBox{
-    background-image:url("./../docs/viewAll.png"); 
+    background-image:url("./../docs/cup.png"); 
     background-repeat:no-repeat ;
     background-size: 100% 100%;
     margin-left: 100px;
@@ -223,7 +223,7 @@ input[type=text] {
     border: solid 5px #067D44;
     border-radius: 25px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 300px;
     margin-left: 5px;
     margin-right: 40px;
  }
@@ -261,7 +261,6 @@ input[type=text] {
     background-repeat:no-repeat ;
     background-size: 100% 100%;
 }
-
 
 
 

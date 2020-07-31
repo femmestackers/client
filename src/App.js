@@ -62,12 +62,7 @@ const App = () => {
   // Create state reducer store and dispatcher
   const [store, dispatch] = useReducer(stateReducer,initialState)
   const {smoothies} = store
-
-  const titleStyles = {
-    color: 'green',
-    fontSize: '1.2em',
-    marginBottom: '2.2em',
-  }
+  
   return (
     <div>
         <div>
@@ -80,9 +75,7 @@ const App = () => {
           <Route exact path="/auth/login" component={Login}/>
           <Route exact path="/smoothies" component={AllSmoothies}/>
           <Route exact path="/smoothies/new" component={NewSmoothie}/>
-      
-              <Route exact path="/smoothies/:id" render={(props) => <Smoothie {...props} smoothie={getSmoothieFromId(smoothies, props.match.params.id)} /> } />
-              
+          <Route exact path="/smoothies/:id" render={(props) => <Smoothie {...props} smoothie={getSmoothieFromId(smoothies, props.match.params.id)} /> } />        
           <Route exact path="/smoothies/edit/:id" component={EditSmoothie} />
           </Switch>
           <Footer/>
